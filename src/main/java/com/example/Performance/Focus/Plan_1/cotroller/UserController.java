@@ -29,12 +29,12 @@ public class UserController {
         return userService.getAllUsers();
     }
 
-    @PutMapping("/user/{id}")                                                                                 //@PreAuthorize("hasRole('USER')")
+    @PutMapping("/user/{id}")                                                                                
     public Mono<User> updateUser(@PathVariable String id,@RequestBody User user) {
         return userService.updateUser(id, user);
     }
 
-    @DeleteMapping("/user/{id}")                                                                              //@PreAuthorize("hasRole('USER')")
+    @DeleteMapping("/user/{id}")                                                                              
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public Mono<Void> deleteUser(@PathVariable String id) {
         return userService.deleteUser(id);
